@@ -7,8 +7,7 @@ CREATE SEQUENCE IF NOT EXISTS mercado_virtual.seq_id_configuracao_estoque_mercad
     CACHE 1;
 
 create table if not exists mercado_virtual.configuracao_estoque_mercadoria_virtual(
-    id_configuracao_estoque_mercadoria_virtual INTEGER PRIMARY KEY DEFAULT nextval('log.seq_id_configuracao_estoque_mercadoria_virtual'),
+    id_configuracao_estoque_mercadoria_virtual INTEGER PRIMARY KEY DEFAULT nextval('mercado_virtual.seq_id_configuracao_estoque_mercadoria_virtual'),
     tipo_pessoa INTEGER,
-    id_subjectus BIGINT,
-    id_estoque_mercadoria_virtual BIGINT
+    id_subjectus BIGINT
 );
