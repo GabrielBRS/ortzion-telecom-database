@@ -12,6 +12,8 @@ create table if not exists mercado_virtual.estoque_mercadoria_virtual(
     id_subjectus BIGINT,
     id_canal_mensageria INTEGER,
     quantidade_estoque_canal_mensageria BIGINT,
+    id_configuracao_estoque_mercadoria_virtual BIGINT,
 
-    foreign key id_canal_mensageria references (mercado_virtual.)
+    foreign key (id_canal_mensageria) references mercado_virtual.canal_mensageria(id_canal_mensageria),
+    foreign key (id_configuracao_estoque_mercadoria_virtual) references mercado_virtual.estoque_mercadoria_virtual(id_estoque_mercadoria_virtual)
 );
