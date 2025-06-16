@@ -1,30 +1,17 @@
 CREATE SCHEMA IF NOT EXISTS log;
 
-CREATE SEQUENCE IF NOT EXISTS log.seq_id_log_historico
+CREATE SEQUENCE IF NOT EXISTS log.seq_id_log_pagamento_cartao
     INCREMENT BY 1
     START WITH 1
     MINVALUE 1
     CACHE 1;
 
-create table if not exists log.log_historico(
-    id_log_historico BIGINT PRIMARY KEY DEFAULT nextval('log.seq_id_log_historico'),
-    tipo_pessoa INTEGER,
-    id_subjectus BIGINT,
-    documento_subjectus VARCHAR(255),
-    id_log_envio_email BIGINT,
-    id_log_envio_sms BIGINT,
-    id_log_envio_whatsap BIGINT,
-    id_log_pagamento_pix BIGINT,
-    id_log_pagamento_cartao BIGINT,
-    id_log_pagamento_boleto BIGINT,
-    id_pagarme VARCHAR(255),
-    codigo_pagarme VARCHAR(255),
-    tipo_carga_canal_mensageria INTEGER,
-    id_carga_canal_mensageria BIGINT,
-    tipo_envio_canal_mensageria INTEGER,
-    id_envio_canal_mensageria BIGINT,
-    id_acesso_usuario_autoritativo BIGINT,
-    documento_usuario_autoritativo VARCHAR(255),
-    data_criacao_log_historico TIMESTAMP WITHOUT TIME ZONE,
-    data_atualizacao_log_historico TIMESTAMP WITHOUT TIME ZONE
+create table if not exists log.log_pagamento_cartao(
+    id_log_pagamento_cartao BIGINT PRIMARY KEY DEFAULT nextval('log.seq_id_log_pagamento_cartao'),
+    data_pagamento_cartao TIMESTAMP WITHOUT TIME ZONE,
+    status_transacao_cartao_credito VARCHAR(255),
+    email_portador_cartao_credito VARCHAR(255),
+    id_transacao_cartao_credito VARCHAR(255),
+    codigo_transacao_cartao_credito VARCHAR(255),
+    valor_pagamento_cartao NUMERIC(10,2)
 );
