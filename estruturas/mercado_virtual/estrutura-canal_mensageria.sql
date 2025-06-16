@@ -1,12 +1,12 @@
 CREATE SCHEMA IF NOT EXISTS mercado_virtual;
 
-CREATE SEQUENCE IF NOT EXISTS log.seq_id_canal_mensageria
+CREATE SEQUENCE IF NOT EXISTS mercado_virtual.seq_id_canal_mensageria
     INCREMENT BY 1
     START WITH 1
     MINVALUE 1
     CACHE 1;
 
-create table if not exists log.log_envio_whatsap(
+create table if not exists mercado_virtual.canal_mensageria(
     id_canal_mensageria INTEGER PRIMARY KEY DEFAULT nextval('log.seq_id_canal_mensageria'),
     nome_canal_mensageria VARCHAR(255),
     descricao_canal_mensageria VARCHAR(255),
