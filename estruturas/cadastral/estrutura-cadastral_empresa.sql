@@ -1,1 +1,1 @@
-create schema log;
+CREATE SCHEMA IF NOT EXISTS cadastral;
