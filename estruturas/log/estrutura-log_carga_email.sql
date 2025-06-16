@@ -8,6 +8,6 @@ CREATE SEQUENCE IF NOT EXISTS log.seq_id_log_carga_email
 
 create table if not exists log.log_carga_email(
     id_log_carga_email BIGINT PRIMARY KEY DEFAULT nextval('log.seq_id_log_carga_email'),
-    data_criacao_log_historico TIMESTAMP WITHOUT TIME ZONE,
+    data_carga_email TIMESTAMP WITHOUT TIME ZONE,
     total_cargas BIGINT
 );

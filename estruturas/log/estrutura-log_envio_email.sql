@@ -1,13 +1,13 @@
 CREATE SCHEMA IF NOT EXISTS log;
 
-CREATE SEQUENCE IF NOT EXISTS log.seq_id_log_historico
+CREATE SEQUENCE IF NOT EXISTS log.seq_id_log_envio_email
     INCREMENT BY 1
     START WITH 1
     MINVALUE 1
     CACHE 1;
 
-create table if not exists log.log_historico(
-    id_log_historico BIGINT PRIMARY KEY DEFAULT nextval('log.seq_id_log_historico'),
+create table if not exists log.log_envio_email(
+    id_log_envio_email BIGINT PRIMARY KEY DEFAULT nextval('log.seq_id_log_envio_email'),
     tipo_pessoa INTEGER,
     id_subjectus BIGINT,
     documento_subjectus VARCHAR(255),
