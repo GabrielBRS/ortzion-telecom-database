@@ -1,0 +1,6 @@
+CREATE SCHEMA IF NOT EXISTS "security";
+
+CREATE TABLE IF NOT EXISTS "security".roles (
+    id BIGINT NOT NULL,
+    nome VARCHAR(255)
+);
